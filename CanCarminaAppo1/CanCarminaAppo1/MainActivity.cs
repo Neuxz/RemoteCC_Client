@@ -21,10 +21,22 @@ namespace CanCarminaAppo1
 
             // Get our button from the layout resource,
             // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.MyButton);
 
-            button.Click += delegate { apiReader ar = apiReader.createReader(); };
+            FindViewById<Button>(Resource.Id.MyButton).Click += delegate 
+            {
+                apiReader ar = apiReader.createReader("ichpassword;cancarmina.de");
+                if(ar.CheckLogIN())
+                {
+                    ar.getTermine();
+                }
+            };
+            FindViewById<Button>(Resource.Id.button1).Click += delegate
+            {
+                new AlertDialog.Builder(this).SetNeutralButton("Ok", delegate { }).SetMessage("Not Implemented yet!").SetTitle("Debug Error").Show();
+            };
         }
+
+
     }
 }
 

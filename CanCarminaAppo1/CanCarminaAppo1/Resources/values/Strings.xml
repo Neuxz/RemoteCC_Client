@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
+    <string name="QR">QR Scanner</string>
     <string name="ApplicationName">CanCarminaAppo1</string>
+  <string name="SignIN">Einloggen</string>
 </resources>
