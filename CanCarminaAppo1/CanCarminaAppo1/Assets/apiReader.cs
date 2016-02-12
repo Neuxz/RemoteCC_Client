@@ -73,9 +73,10 @@ namespace CanCarminaAppo1
             return returner;
         }
 
-        public List<Termine> getTermine()
+        public /*List<Termine>*/string getTermine()
         {
-            List<Termine> terminListe = new List<Termine>();
+            //List<Termine> terminListe = new List<Termine>();
+            string terminListe = "";
 
             HttpWebRequest myRequest =
                  (HttpWebRequest)WebRequest.Create("http://" + usrCH + api + usrID + apiTMList + (terminAlle?"alle": "alle"));
@@ -86,7 +87,8 @@ namespace CanCarminaAppo1
                 using (System.IO.StreamReader reader = new System.IO.StreamReader(response.GetResponseStream()))
                 {
                     //JSONArray Jarr = new JSONArray(reader.ReadToEnd());// .Parse(reader.ReadToEnd());
-                    JSONObject o = new JSONObject(reader.ReadToEnd());
+                    terminListe = reader.ReadToEnd();
+                    /*JSONObject o = new JSONObject(debug);
 
                     JSONArray arrayOfTests = (JSONArray)((JSONObject)o.Get("Groups")).Get("Test");
 
@@ -94,7 +96,7 @@ namespace CanCarminaAppo1
                     {
                         Console.WriteLine( arrayOfTests.Get(i));
                     }
-                    //Console.WriteLine(debug);
+                    //Console.WriteLine(debug);*/
                 }
             }
 
