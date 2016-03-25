@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\apiReader.cs" />
+    <Compile Include="Assets\Appointments.cs" />
+    <Compile Include="Assets\Forum.cs" />
+    <Compile Include="Assets\ParseJson.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

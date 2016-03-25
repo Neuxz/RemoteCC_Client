@@ -13,7 +13,7 @@ using System.Net;
 
 namespace CanCarminaAppo1
 {
-    class apiReader
+    class apiConnector
     {
         public enum debug{
             Debug, NONdebug};
@@ -23,23 +23,23 @@ namespace CanCarminaAppo1
         private string usrCH;
         private bool terminAlle = true;
         //Create help
-        private apiReader()
+        private apiConnector()
         {
             usrID = "";
             usrCH = "";
         }
-        public static apiReader createReader(string qrResult)
+        public static apiConnector createReader(string qrResult)
         {
             string[] signs = qrResult.Split(';');
-            apiReader ar = new apiReader();
+            apiConnector ar = new apiConnector();
             ar.usrID = signs[0];
             ar.usrCH = signs[1];
             return ar;
         }
         [Obsolete("Only for Debug and Tests")]
-        public static apiReader createReader()
+        public static apiConnector createReader()
         {
-            apiReader ar = new apiReader();
+            apiConnector ar = new apiConnector();
             ar.usrID = "ichpassword";
             ar.usrCH = "cancarmina.de";
             return ar;
@@ -73,10 +73,10 @@ namespace CanCarminaAppo1
             return returner;
         }
 
-        public /*List<Termine>*/string getTermine()
+        public List<Appointment> getTermine()
         {
             //List<Termine> terminListe = new List<Termine>();
-            string terminListe = "";
+            List<Appointment> Resu = null;
 
             HttpWebRequest myRequest =
                  (HttpWebRequest)WebRequest.Create("http://" + usrCH + api + usrID + apiTMList + (terminAlle?"alle": "alle"));
@@ -86,21 +86,22 @@ namespace CanCarminaAppo1
                 Console.WriteLine(response.GetResponseStream());
                 using (System.IO.StreamReader reader = new System.IO.StreamReader(response.GetResponseStream()))
                 {
-                    //JSONArray Jarr = new JSONArray(reader.ReadToEnd());// .Parse(reader.ReadToEnd());
-                    terminListe = reader.ReadToEnd();
-                    /*JSONObject o = new JSONObject(debug);
+                    Resu = Appointment.CreateAppointmentList(ParseJson.JsonArrayToDictionaryList(reader.ReadToEnd()));
 
-                    JSONArray arrayOfTests = (JSONArray)((JSONObject)o.Get("Groups")).Get("Test");
-
-                    for (int i = 0; i < arrayOfTests.Length(); i++)
-                    {
-                        Console.WriteLine( arrayOfTests.Get(i));
-                    }
-                    //Console.WriteLine(debug);*/
                 }
             }
 
-            return terminListe;
+            return Resu;
+        }
+        [Obsolete("Ony for Debug")]
+        public String AppointmentToList(List<Appointment> resu)
+        {
+            string mesu = "";
+            foreach(Appointment sesu in resu)
+            {
+                mesu += sesu.ToString();
+            }
+            return mesu;
         }
         public struct Termine
         {

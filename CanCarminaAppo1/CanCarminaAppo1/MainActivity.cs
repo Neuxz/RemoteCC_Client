@@ -24,10 +24,10 @@ namespace CanCarminaAppo1
 
             FindViewById<Button>(Resource.Id.MyButton).Click += delegate 
             {
-                apiReader ar = apiReader.createReader("ichpassword;cancarmina.de");
-                if(ar.CheckLogIN())
+                apiConnector ar = apiConnector.createReader("ichpassword;cancarmina.de");
+                if (ar.CheckLogIN())
                 {
-                    FindViewById<EditText>(Resource.Id.editText1).Text = ar.getTermine();
+                    FindViewById<EditText>(Resource.Id.editText1).Text = ar.AppointmentToList(ar.getTermine());
                 }
             };
             FindViewById<Button>(Resource.Id.button1).Click += delegate
