@@ -77,7 +77,6 @@ namespace CanCarminaAppo1
         {
             //List<Termine> terminListe = new List<Termine>();
             string terminListe = "";
-            JSONObject jo = null;
 
             HttpWebRequest myRequest =
                  (HttpWebRequest)WebRequest.Create("http://" + usrCH + api + usrID + apiTMList + (terminAlle?"alle": "alle"));
@@ -89,8 +88,8 @@ namespace CanCarminaAppo1
                 {
                     //JSONArray Jarr = new JSONArray(reader.ReadToEnd());// .Parse(reader.ReadToEnd());
                     terminListe = reader.ReadToEnd();
-                    jo = new JSONObject().GetJSONObject(terminListe);
-                    /*
+                    /*JSONObject o = new JSONObject(debug);
+
                     JSONArray arrayOfTests = (JSONArray)((JSONObject)o.Get("Groups")).Get("Test");
 
                     for (int i = 0; i < arrayOfTests.Length(); i++)
