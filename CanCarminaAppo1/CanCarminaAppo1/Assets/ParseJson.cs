@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace JsonParser
+namespace CanCarminaAppo1
 {
     public class ParseJson
     {
