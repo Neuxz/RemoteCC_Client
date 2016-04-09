@@ -24,10 +24,19 @@ namespace CanCarminaAppo1
 
             FindViewById<Button>(Resource.Id.MyButton).Click += delegate 
             {
-                apiConnector ar = apiConnector.createReader("ichpassword;cancarmina.de");
-                if (ar.CheckLogIN())
+                if (FindViewById<EditText>(Resource.Id.editText1).Text != String.Empty)
                 {
-                    FindViewById<EditText>(Resource.Id.editText1).Text = ar.AppointmentToList(ar.getTermine());
+                    apiConnector ar = apiConnector.createReader(FindViewById<EditText>(Resource.Id.editText1).Text + ";cancarmina.de");
+                    if (ar.CheckLogIN())
+                    {
+                        Intent newMain = new Intent(this, typeof(MainMenu));
+                        newMain.PutExtra("api", ar.Serialize());
+                        StartActivity(newMain);
+                    }
+                }
+                else
+                {
+                    new AlertDialog.Builder(this).SetNeutralButton("Ok", delegate { }).SetMessage("Bitte geben sie ihren Benutzercode ein.").SetTitle("Kein Benutzer code.").Show();
                 }
             };
             FindViewById<Button>(Resource.Id.button1).Click += delegate

@@ -1,0 +1,8 @@
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\assets\CanCarminaAppo1.dll
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\assets\Mono.Android.dll
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\assets\mscorlib.dll
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\assets\System.Core.dll
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\assets\System.dll
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\assets\System.Xml.dll
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\assets\System.Runtime.Serialization.dll
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\assets\System.ServiceModel.Internals.dll

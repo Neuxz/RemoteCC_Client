@@ -10,9 +10,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using System.Net;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace CanCarminaAppo1
 {
+    [Serializable]
     class apiConnector
     {
         public enum debug{
@@ -31,18 +34,10 @@ namespace CanCarminaAppo1
         public static apiConnector createReader(string qrResult)
         {
             string[] signs = qrResult.Split(';');
-            apiConnector ar = new apiConnector();
-            ar.usrID = signs[0];
-            ar.usrCH = signs[1];
-            return ar;
-        }
-        [Obsolete("Only for Debug and Tests")]
-        public static apiConnector createReader()
-        {
-            apiConnector ar = new apiConnector();
-            ar.usrID = "ichpassword";
-            ar.usrCH = "cancarmina.de";
-            return ar;
+                apiConnector apiConn = new apiConnector();
+                apiConn.usrID = signs[0];
+                apiConn.usrCH = signs[1];
+            return apiConn;
         }
 
         //Methods
@@ -93,6 +88,27 @@ namespace CanCarminaAppo1
 
             return Resu;
         }
+        public Byte[] Serialize()
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            using (MemoryStream ms = new MemoryStream())
+            {
+                bf.Serialize(ms, this);
+                return ms.ToArray();
+            }
+        }
+
+        public static apiConnector Deserialize(Byte[] input)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                ms.Write(input, 0, input.Length);
+                ms.Seek(0, SeekOrigin.Begin);
+                return (apiConnector)bf.Deserialize(ms);
+            }
+        }
+
         [Obsolete("Ony for Debug")]
         public String AppointmentToList(List<Appointment> resu)
         {

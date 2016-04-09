@@ -1,0 +1,15 @@
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\CanCarminaAppo1.dll
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\CanCarminaAppo1.pdb
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\CanCarminaAppo1.CanCarminaAppo1.apk
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\CanCarminaAppo1.CanCarminaAppo1-Signed.apk
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\CanCarminaAppo1.dll
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\CanCarminaAppo1.pdb
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\bin\CanCarminaAppo1.CanCarminaAppo1.apk
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\res\layout\mainmenu.xml
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\res\layout\main.xml
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\res\values\strings.xml
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\res\drawable\icon.png
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\R.cs.flag
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\uploadflags.txt
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\CanCarminaAppo1.dll.mdb
+C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\CanCarminaAppo1.dll.mdb

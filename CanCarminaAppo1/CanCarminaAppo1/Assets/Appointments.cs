@@ -7,6 +7,7 @@ namespace CanCarminaAppo1
     public class Appointment
     {
         private AppointmentType type;
+        private DateTime trm_Datum;
         private DateTime trm_zeitanfang;
         private DateTime trm_zeitende;
         private DateTime trm_zeitecht;
@@ -22,11 +23,20 @@ namespace CanCarminaAppo1
         private int trm_abmeldungtage;
         private int trm_instatistik;
         private int trm_id;
+        private bool trm_angemeldet;
 
         #region gettter
         public AppointmentType Type
         {
             get { return type; }
+        }
+        public bool Trm_angemeldet
+        {
+            get { return trm_angemeldet; }
+        }
+        public DateTime Trm_Datum
+        {
+            get { return trm_Datum; }
         }
         public DateTime Trm_zeitanfang
         {
@@ -93,7 +103,10 @@ namespace CanCarminaAppo1
         public Appointment(Dictionary<String, String> appointment)
         {
             string temp;
+            string optTemp;
             type = AppointmentType.OverView;
+            if (appointment.TryGetValue("trm_datum", out temp))
+            { trm_Datum = DateTime.Parse(temp); }
             if (appointment.TryGetValue("trm_zeitanfang", out temp))
             { trm_zeitanfang = DateTime.Parse(temp); }
             if (appointment.TryGetValue("trm_zeitende", out temp))
@@ -124,6 +137,8 @@ namespace CanCarminaAppo1
             { trm_instatistik = Int32.Parse(temp);}
             if (appointment.TryGetValue("trm_id", out temp))
             { trm_id = Int32.Parse(temp); }
+            if (appointment.TryGetValue("abm_status", out temp))
+            { trm_angemeldet = temp.Equals("angemeldet"); }
         }
 
         public enum AppointmentType
@@ -158,6 +173,7 @@ namespace CanCarminaAppo1
             sb.Append("\t" + "Beginn:\t\t" + trm_zeitanfang + "\r\n");
             sb.Append("\t" + "Öff. beginn:\t" + trm_zeitecht + "\r\n");
             sb.Append("\t" + "Ende:\t\t" + trm_zeitende + "\r\n");
+            sb.Append("\r\n");
             return sb.ToString();
         }
     }
