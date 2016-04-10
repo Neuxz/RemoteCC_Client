@@ -23,8 +23,6 @@ namespace CanCarminaAppo1
             apiConnector ar = apiConnector.Deserialize(Intent.GetByteArrayExtra("api"));
             lv = FindViewById<ListView>(Resource.Id.TerminListe);
             lv.Adapter = new Termin_Adapter(this, ar.getTermine());
-            lv.Adapter.GetView(0, null, null).Click += MainMenu_Click;
-            
             lv.ItemClick += Lv_ItemClick;
             lv.ItemLongClick += Lv_ItemLongClick;
         ////https://developer.xamarin.com/guides/xamarin-forms/user-interface/listview/customizing-cell-appearance/

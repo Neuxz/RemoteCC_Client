@@ -41,7 +41,7 @@ namespace CanCarminaAppo1
         {
             return position;
         }
-
+        
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             View row = convertView;
@@ -49,11 +49,19 @@ namespace CanCarminaAppo1
             {
                 row = LayoutInflater.From(context).Inflate(Resource.Layout.Termin_Uebersicht, null, false);
             }
+            row.Tag = position;
+            //row.FindViewById<TextView>(Resource.Id.terminTitle).Click += this.;
             row.FindViewById<TextView>(Resource.Id.terminTitle).Text = termine[position].Trm_bezeichnung;
             row.FindViewById<TextView>(Resource.Id.terminDatum).Text = termine[position].Trm_Datum.ToLongDateString();
             row.FindViewById<TextView>(Resource.Id.terminZeit).Text = termine[position].Trm_zeitanfang.TimeOfDay.Hours.ToString("00") + ":" + termine[position].Trm_zeitanfang.TimeOfDay.Minutes.ToString("00");
             row.FindViewById<CheckBox>(Resource.Id.anmStatus).Checked = termine[position].Trm_angemeldet;
+            row.Click += Row_Click;
             return row;
+        }
+
+        private void Row_Click(object sender, EventArgs e)
+        {
+            int position = (int)((LinearLayout)sender).Tag;
         }
     }
 }

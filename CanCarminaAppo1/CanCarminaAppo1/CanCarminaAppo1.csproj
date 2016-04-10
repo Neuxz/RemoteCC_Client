@@ -53,13 +53,25 @@
     <Compile Include="Assets\Appointments.cs" />
     <Compile Include="Assets\Forum.cs" />
     <Compile Include="Assets\ParseJson.cs" />
+    <Compile Include="Assets\Temp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Temp.cach</DependentUpon>
+    </Compile>
+    <Compile Include="DriveManagement.cs" />
+    <Compile Include="DriveManagementAndroid.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Termin_Adapter.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\Temp.cach">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Temp.Designer.cs</LastGenOutput>
+    </AndroidAsset>
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />

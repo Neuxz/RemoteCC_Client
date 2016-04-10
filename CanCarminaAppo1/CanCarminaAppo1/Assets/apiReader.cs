@@ -22,21 +22,19 @@ namespace CanCarminaAppo1
             Debug, NONdebug};
         private const string api = "/?m=api&c=";
         private const string apiTMList = "&t=";
-        private string usrID;
-        private string usrCH;
-        private bool terminAlle = true;
+        private User curent;
         //Create help
         private apiConnector()
         {
-            usrID = "";
-            usrCH = "";
+            curent = new User();
         }
         public static apiConnector createReader(string qrResult)
         {
+
             string[] signs = qrResult.Split(';');
                 apiConnector apiConn = new apiConnector();
-                apiConn.usrID = signs[0];
-                apiConn.usrCH = signs[1];
+                apiConn.curent.usrID = signs[0];
+                apiConn.curent.usrCH = signs[1];
             return apiConn;
         }
 
@@ -47,7 +45,7 @@ namespace CanCarminaAppo1
             try
             {
                 HttpWebRequest myRequest =
-                 (HttpWebRequest)WebRequest.Create("http://" + usrCH + api + usrID);
+                 (HttpWebRequest)WebRequest.Create("http://" + curent.usrCH + api + curent.usrID);
                 Console.WriteLine(myRequest.GetResponse());
                 using (WebResponse response = myRequest.GetResponse())
                 {
@@ -70,11 +68,16 @@ namespace CanCarminaAppo1
 
         public List<Appointment> getTermine()
         {
+            return LoadTermine((HttpWebRequest)WebRequest.Create("http://" + curent.usrCH + api + curent.usrID + apiTMList + "alle"));
+        }
+        public List<Appointment> getTermine(string trmId)
+        {
+            return LoadTermine((HttpWebRequest)WebRequest.Create("http://" + curent.usrCH + api + curent.usrID + apiTMList + trmId));
+        }
+        private List<Appointment> LoadTermine(HttpWebRequest myRequest)
+        {
             //List<Termine> terminListe = new List<Termine>();
             List<Appointment> Resu = null;
-
-            HttpWebRequest myRequest =
-                 (HttpWebRequest)WebRequest.Create("http://" + usrCH + api + usrID + apiTMList + (terminAlle?"alle": "alle"));
             Console.WriteLine(myRequest.GetResponse());
             using (WebResponse response = myRequest.GetResponse())
             {
@@ -85,7 +88,6 @@ namespace CanCarminaAppo1
 
                 }
             }
-
             return Resu;
         }
         public Byte[] Serialize()

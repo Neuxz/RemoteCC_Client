@@ -22,7 +22,7 @@ namespace CanCarminaAppo1
         private string trm_style;
         private int trm_abmeldungtage;
         private int trm_instatistik;
-        private int trm_id;
+        private string trm_id;
         private bool trm_angemeldet;
 
         #region gettter
@@ -94,7 +94,7 @@ namespace CanCarminaAppo1
         {
             get { return trm_instatistik; }
         }
-        public int Trm_id
+        public string Trm_id
         {
             get { return trm_id; }
         }
@@ -136,7 +136,7 @@ namespace CanCarminaAppo1
             if (appointment.TryGetValue("trm_instatistik", out temp))
             { trm_instatistik = Int32.Parse(temp);}
             if (appointment.TryGetValue("trm_id", out temp))
-            { trm_id = Int32.Parse(temp); }
+            { trm_id = temp; }
             if (appointment.TryGetValue("abm_status", out temp))
             { trm_angemeldet = temp.Equals("angemeldet"); }
         }
