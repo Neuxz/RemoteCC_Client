@@ -14,6 +14,13 @@ namespace CanCarminaAppo1
 {
     abstract class DriveManagement
     {
-        public abstract bool createDatabase(User current);
+        public static bool createDatabase(User current, Context ct)
+        {
+            return false;
+        }
+        public static User getDatabase(Context ct)
+        {
+            return null;
+        }
     }
 }

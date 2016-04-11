@@ -11,19 +11,22 @@ using Android.Views;
 using Android.Widget;
 using System.IO;
 using Android.Content.Res;
+using Mono.Data.Sqlite;
+using System.Data.SqlClient;
 
 namespace CanCarminaAppo1
 {
     class DriveManagementAndroid : DriveManagement
     {
         private static string dbName = "Temp.cach";
-        private string databasePath = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.ToString(), dbName);
-        public override bool createDatabase(User current)
+        private static string databasePath = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.ToString(), dbName);
+        public static new bool createDatabase(User current, Context ct)
         {
-            if(!File.Exists(databasePath))
+            if (!File.Exists(databasePath))
             {
                 //http://stackoverflow.com/questions/18715613/use-a-local-database-in-xamarin
                 //https://forums.xamarin.com/discussion/6990/how-to-correctly-save-and-read-files
+                AssetManager assets = new ContextWrapper(ct).Assets;
                 using (BinaryReader br = new BinaryReader(assets.Open(dbName)))
                 {
                     using (BinaryWriter bw = new BinaryWriter(new FileStream(databasePath, FileMode.Create)))
@@ -36,7 +39,51 @@ namespace CanCarminaAppo1
                         }
                     }
                 }
+                using (SqliteConnection co = new SqliteConnection(databasePath))
+                {
+                    co.Open();
+                    SqliteCommand cmd = co.CreateCommand();
+                    cmd.CommandText = "Insert into User (ID,Name, Chor, Appointments)" +
+                        "values(@id, @name, @chor, @appoi)";
+                    List<SqlParameter> sqlisat = new List<SqlParameter>() {
+                    new SqlParameter("@id", current.usrID),
+                    new SqlParameter("@name", current.phrase),
+                    new SqlParameter("@chor", current.usrCH),
+                    new SqlParameter("@appoi", current.storage)
+                    };
+                    sqlisat.ForEach(cmdPam => cmd.Parameters.Add(cmdPam));
+                    cmd.ExecuteNonQuery();
+                }
             }
+            return current.Equals(getDatabase(ct));
+        }
+
+        public static new User getDatabase(Context ct)
+        {
+            User result = new User();
+            using (SqliteConnection co = new SqliteConnection(databasePath))
+                {
+                co.Open();
+                SqliteCommand cmd = co.CreateCommand();
+                cmd.CommandText = "Selct * From User";
+                try
+                {
+                    SqliteDataReader read = cmd.ExecuteReader();
+                    if(read.Read())
+                    {
+                        result.usrID = (string)read["ID"];
+                        result.phrase = (string)read["Name"];
+                        result.usrCH = (string)read["Chor"];
+                        result.storage = (List<Appointment>)read["Appointments"];
+                    }
+                }
+                catch(Exception ex)
+                {
+
+                }
+                cmd.ExecuteNonQuery();
+            }
+            return result;
         }
     }
 }

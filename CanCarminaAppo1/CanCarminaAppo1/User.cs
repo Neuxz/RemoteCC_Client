@@ -16,6 +16,7 @@ namespace CanCarminaAppo1
     {
         public string usrID;
         public string usrCH;
+        public string phrase;
         public List<Appointment> storage;
         public void updateLocalTerminlist(List<Appointment> newList)
         {
