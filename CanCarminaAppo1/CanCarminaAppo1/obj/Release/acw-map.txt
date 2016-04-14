@@ -6,3 +6,7 @@ CanCarminaAppo1.MainMenu, CanCarminaAppo1;md505e880a511252a2972436605a4ec9d7f.Ma
 CanCarminaAppo1.MainMenu, CanCarminaAppo1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md505e880a511252a2972436605a4ec9d7f.MainMenu
 CanCarminaAppo1.MainMenu;md505e880a511252a2972436605a4ec9d7f.MainMenu
 cancarminaappo1.MainMenu;md505e880a511252a2972436605a4ec9d7f.MainMenu
+CanCarminaAppo1.Termin_Adapter, CanCarminaAppo1;md505e880a511252a2972436605a4ec9d7f.Termin_Adapter
+CanCarminaAppo1.Termin_Adapter, CanCarminaAppo1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md505e880a511252a2972436605a4ec9d7f.Termin_Adapter
+CanCarminaAppo1.Termin_Adapter;md505e880a511252a2972436605a4ec9d7f.Termin_Adapter
+cancarminaappo1.Termin_Adapter;md505e880a511252a2972436605a4ec9d7f.Termin_Adapter

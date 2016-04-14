@@ -13,6 +13,7 @@ using System.IO;
 using Android.Content.Res;
 using Mono.Data.Sqlite;
 using System.Data.SqlClient;
+//using System.Data.SqlClient;
 
 namespace CanCarminaAppo1
 {
@@ -42,14 +43,13 @@ namespace CanCarminaAppo1
                 using (SqliteConnection co = new SqliteConnection(databasePath))
                 {
                     co.Open();
-                    SqliteCommand cmd = co.CreateCommand();
-                    cmd.CommandText = "Insert into User (ID,Name, Chor, Appointments)" +
-                        "values(@id, @name, @chor, @appoi)";
-                    List<SqlParameter> sqlisat = new List<SqlParameter>() {
-                    new SqlParameter("@id", current.usrID),
-                    new SqlParameter("@name", current.phrase),
-                    new SqlParameter("@chor", current.usrCH),
-                    new SqlParameter("@appoi", current.storage)
+                    SqliteCommand cmd = co.CreateCommand();//   .CreateCommand();
+                    cmd.CommandText = "Insert into User (ID,Name, Chor, Appointments) values(@id, @name, @chor, @appoi)";
+                    List<SqliteParameter> sqlisat = new List<SqliteParameter>() {
+                    new SqliteParameter("@id", current.usrID),
+                    new SqliteParameter("@name", current.phrase),
+                    new SqliteParameter("@chor", current.usrCH),
+                    new SqliteParameter("@appoi", current.storage)
                     };
                     sqlisat.ForEach(cmdPam => cmd.Parameters.Add(cmdPam));
                     cmd.ExecuteNonQuery();
