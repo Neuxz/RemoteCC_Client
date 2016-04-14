@@ -20,7 +20,7 @@ namespace CanCarminaAppo1
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MainMenu);
-            apiConnector ar = apiConnector.Deserialize(Intent.GetByteArrayExtra("api"));
+            apiConnector ar = apiConnector.createReader();
             lv = FindViewById<ListView>(Resource.Id.TerminListe);
             lv.Adapter = new Termin_Adapter(this, ar.getTermine());
             lv.ItemClick += Lv_ItemClick;

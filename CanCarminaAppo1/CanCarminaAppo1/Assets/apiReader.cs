@@ -28,13 +28,31 @@ namespace CanCarminaAppo1
         {
             curent = new User();
         }
-        public static apiConnector createReader(string qrResult)
+        private apiConnector(User curent)
+        {
+            this.curent = curent;
+        }
+        public static apiConnector createReader()
+        {
+            return new apiConnector(DriveManagementAndroid.getDatabase());
+        }
+        public static apiConnector createReader(string qrResult, Context cont)
         {
 
             string[] signs = qrResult.Split(';');
-                apiConnector apiConn = new apiConnector();
-                apiConn.curent.usrID = signs[0];
-                apiConn.curent.usrCH = signs[1];
+            User temp = new User(signs[0], signs[1]);
+            apiConnector apiConn = new apiConnector();
+            if (!DriveManagementAndroid.createDatabase(temp, cont))
+            {
+                apiConn.curent = temp;
+            }
+            else
+            {
+                apiConn.curent = DriveManagementAndroid.getDatabase();
+            }
+                
+
+            DriveManagement dm = new DriveManagementAndroid();
             return apiConn;
         }
 
@@ -45,7 +63,7 @@ namespace CanCarminaAppo1
             try
             {
                 HttpWebRequest myRequest =
-                 (HttpWebRequest)WebRequest.Create("http://" + curent.usrCH + api + curent.usrID);
+                 (HttpWebRequest)WebRequest.Create("http://" + curent.usrCH + api + curent.phrase);
                 Console.WriteLine(myRequest.GetResponse());
                 using (WebResponse response = myRequest.GetResponse())
                 {
@@ -68,11 +86,11 @@ namespace CanCarminaAppo1
 
         public List<Appointment> getTermine()
         {
-            return LoadTermine((HttpWebRequest)WebRequest.Create("http://" + curent.usrCH + api + curent.usrID + apiTMList + "alle"));
+            return LoadTermine((HttpWebRequest)WebRequest.Create("http://" + curent.usrCH + api + curent.phrase + apiTMList + "alle"));
         }
         public List<Appointment> getTermine(string trmId)
         {
-            return LoadTermine((HttpWebRequest)WebRequest.Create("http://" + curent.usrCH + api + curent.usrID + apiTMList + trmId));
+            return LoadTermine((HttpWebRequest)WebRequest.Create("http://" + curent.usrCH + api + curent.phrase + apiTMList + trmId));
         }
         private List<Appointment> LoadTermine(HttpWebRequest myRequest)
         {

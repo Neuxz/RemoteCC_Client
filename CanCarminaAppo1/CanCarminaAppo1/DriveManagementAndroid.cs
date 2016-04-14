@@ -23,27 +23,31 @@ namespace CanCarminaAppo1
         private static string databasePath = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.ToString(), dbName);
         public static new bool createDatabase(User current, Context ct)
         {
-            if (!File.Exists(databasePath))
+            /*if (!File.Exists(databasePath))
             {
                 //http://stackoverflow.com/questions/18715613/use-a-local-database-in-xamarin
                 //https://forums.xamarin.com/discussion/6990/how-to-correctly-save-and-read-files
                 AssetManager assets = new ContextWrapper(ct).Assets;
-                using (BinaryReader br = new BinaryReader(assets.Open(dbName)))
+                using (StreamReader br = new StreamReader(assets.Open(dbName)))
                 {
-                    using (BinaryWriter bw = new BinaryWriter(new FileStream(databasePath, FileMode.Create)))
+                    using (StreamWriter bw = new StreamWriter(new FileStream(databasePath, FileMode.Create)))
                     {
-                        byte[] buffer = new byte[2048];
-                        int len = 0;
-                        while ((len = br.Read(buffer, 0, buffer.Length)) > 0)
-                        {
-                            bw.Write(buffer, 0, len);
-                        }
+                        bw.Write(br.ReadToEnd());
+                        bw.Dispose();
+                        bw.Close();
                     }
+                
                 }
-                using (SqliteConnection co = new SqliteConnection(databasePath))
+            }*/
+            bool retur = getDatabase().phrase == null;
+            if (retur)
+            {
+                using (SqliteConnection co = new SqliteConnection("Data Source=" + databasePath))
                 {
                     co.Open();
                     SqliteCommand cmd = co.CreateCommand();//   .CreateCommand();
+                    cmd.CommandText = "CREATE TABLE User (	`ID`	TEXT,	`Name`	TEXT,	`Chor`	TEXT,	`Appointments`	BLOB)";
+                    cmd.ExecuteNonQuery();
                     cmd.CommandText = "Insert into User (ID,Name, Chor, Appointments) values(@id, @name, @chor, @appoi)";
                     List<SqliteParameter> sqlisat = new List<SqliteParameter>() {
                     new SqliteParameter("@id", current.usrID),
@@ -55,33 +59,33 @@ namespace CanCarminaAppo1
                     cmd.ExecuteNonQuery();
                 }
             }
-            return current.Equals(getDatabase(ct));
+            return retur;
         }
 
-        public static new User getDatabase(Context ct)
+        public static new User getDatabase()
         {
             User result = new User();
-            using (SqliteConnection co = new SqliteConnection(databasePath))
+            using (SqliteConnection co = new SqliteConnection("Data Source=" + databasePath))
                 {
                 co.Open();
                 SqliteCommand cmd = co.CreateCommand();
-                cmd.CommandText = "Selct * From User";
+                cmd.CommandText = "Select * From User";
                 try
                 {
                     SqliteDataReader read = cmd.ExecuteReader();
                     if(read.Read())
                     {
-                        result.usrID = (string)read["ID"];
-                        result.phrase = (string)read["Name"];
-                        result.usrCH = (string)read["Chor"];
-                        result.storage = (List<Appointment>)read["Appointments"];
+
+                        try { result.usrID = (string)read["ID"]; } catch (Exception ex) { result.usrID = ""; }
+                        try { result.phrase = (string)read["Name"]; } catch (Exception ex) { throw new Exception("NO Passphrase"); }
+                        try { result.usrCH = (string)read["Chor"]; } catch (Exception ex) { result.usrCH = ""; }
+                        try { result.storage = (List<Appointment>)read["Appointments"]; } catch (Exception ex) { }
                     }
                 }
                 catch(Exception ex)
                 {
-
+                    Console.Write(ex);
                 }
-                cmd.ExecuteNonQuery();
             }
             return result;
         }

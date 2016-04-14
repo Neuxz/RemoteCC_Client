@@ -29,11 +29,10 @@ namespace CanCarminaAppo1
                 {
                     FindViewById<Spinner>(Resource.Id.spinner1).MotionEventSplittingEnabled = true;
                     FindViewById<Spinner>(Resource.Id.spinner1).Visibility = ViewStates.Visible;
-                    apiConnector ar = apiConnector.createReader(FindViewById<EditText>(Resource.Id.editText1).Text + ";cancarmina.de");
+                    apiConnector ar = apiConnector.createReader(FindViewById<EditText>(Resource.Id.editText1).Text + ";cancarmina.de", this);
                     if (ar.CheckLogIN())
                     {
                         Intent newMain = new Intent(this, typeof(MainMenu));
-                        newMain.PutExtra("api", ar.Serialize());
                         StartActivity(newMain);
                     }
                 }
