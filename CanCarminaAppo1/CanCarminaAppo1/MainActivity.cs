@@ -21,11 +21,14 @@ namespace CanCarminaAppo1
 
             // Get our button from the layout resource,
             // and attach an event to it
-
+            FindViewById<Spinner>(Resource.Id.spinner1).MotionEventSplittingEnabled = false;
+            FindViewById<Spinner>(Resource.Id.spinner1).Visibility = ViewStates.Invisible;
             FindViewById<Button>(Resource.Id.MyButton).Click += delegate 
             {
                 if (FindViewById<EditText>(Resource.Id.editText1).Text != String.Empty)
                 {
+                    FindViewById<Spinner>(Resource.Id.spinner1).MotionEventSplittingEnabled = true;
+                    FindViewById<Spinner>(Resource.Id.spinner1).Visibility = ViewStates.Visible;
                     apiConnector ar = apiConnector.createReader(FindViewById<EditText>(Resource.Id.editText1).Text + ";cancarmina.de");
                     if (ar.CheckLogIN())
                     {

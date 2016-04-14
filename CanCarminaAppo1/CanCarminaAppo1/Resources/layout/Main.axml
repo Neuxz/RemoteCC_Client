@@ -19,4 +19,8 @@
         android:id="@+id/button1"
         android:layout_marginLeft="105.0dp"
         android:layout_marginRight="105.0dp" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner1" />
 </LinearLayout>
