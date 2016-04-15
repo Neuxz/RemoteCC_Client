@@ -27,5 +27,6 @@ C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\
 C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\res\drawable\icon.png
 C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\R.cs.flag
 C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\uploadflags.txt
+C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\CanCarminaAppo1.csprojResolveAssemblyReference.cache
 C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\CanCarminaAppo1.dll.mdb
 C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\CanCarminaAppo1.dll.mdb

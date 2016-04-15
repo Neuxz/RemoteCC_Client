@@ -21,9 +21,12 @@ namespace CanCarminaAppo1
         public enum debug{
             Debug, NONdebug};
         private const string api = "/?m=api&c=";
-        private const string apiTMList = "&t=";
+        private const string apiTrmIDIS = "&t=";
+        private const string apiAnAbML = "&a=";
+        private const string apiAnML = "n";
+        private const string apiAbML = "b";
         private User curent;
-        //Create help
+        //Create help[]
         private apiConnector()
         {
             curent = new User();
@@ -83,14 +86,54 @@ namespace CanCarminaAppo1
             }
             return returner;
         }
+        public string Anmelden(bool anmelden,string trmIF, out bool anmeldung)
+        {
+            string result = getStringResponse((HttpWebRequest)WebRequest.Create("http://" + curent.usrCH + api + curent.phrase + apiTrmIDIS + trmIF + apiAnAbML + (anmelden?apiAnML:apiAbML)));
 
+            if (result.Contains("Neuer Status: angemeldet. Danke!"))
+            {
+                anmeldung = true;
+                return "Du wurdest angemeldet";
+            }
+            else if (result.Contains("Neuer Status: abgemeldet. Danke!"))
+            {
+                anmeldung = false;
+                return "Du wurdest abgemeldet";
+            }
+            else if (result.Contains("Abmelden ist nicht mehr möglich."))
+            {
+                anmeldung = true;
+                return "Änderung nicht Möglich!";
+            }
+            anmeldung = true;
+            return "Netzwerk fehler.";
+                
+                    
+       }
+        private string getStringResponse(HttpWebRequest wq)
+        {
+            try
+            {
+                using (WebResponse response = wq.GetResponse())
+                {
+                    using (System.IO.StreamReader reader = new System.IO.StreamReader(response.GetResponseStream()))
+                    {
+                        return reader.ReadToEnd();
+                    }
+                }
+            }
+            catch(Exception ec)
+            {
+                return "";
+            }
+        }
         public List<Appointment> getTermine()
         {
-            return LoadTermine((HttpWebRequest)WebRequest.Create("http://" + curent.usrCH + api + curent.phrase + apiTMList + "alle"));
+            return LoadTermine((HttpWebRequest)WebRequest.Create("http://" + curent.usrCH + api + curent.phrase + apiTrmIDIS + "alle"));
         }
         public List<Appointment> getTermine(string trmId)
         {
-            return LoadTermine((HttpWebRequest)WebRequest.Create("http://" + curent.usrCH + api + curent.phrase + apiTMList + trmId));
+            return LoadTermine((HttpWebRequest)WebRequest.Create("http://" + curent.usrCH + api + curent.phrase + apiTrmIDIS + trmId));
         }
         private List<Appointment> LoadTermine(HttpWebRequest myRequest)
         {

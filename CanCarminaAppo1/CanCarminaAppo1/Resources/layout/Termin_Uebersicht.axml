@@ -40,5 +40,5 @@
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
         p1:id="@+id/anmStatus"
-        p1:enabled="false" />
+        p1:enabled="true" />
 </LinearLayout>

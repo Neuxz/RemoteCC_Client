@@ -50,18 +50,30 @@ namespace CanCarminaAppo1
                 row = LayoutInflater.From(context).Inflate(Resource.Layout.Termin_Uebersicht, null, false);
             }
             row.Tag = position;
+            row.FindViewById<CheckBox>(Resource.Id.anmStatus).Tag = position;
             //row.FindViewById<TextView>(Resource.Id.terminTitle).Click += this.;
             row.FindViewById<TextView>(Resource.Id.terminTitle).Text = termine[position].Trm_bezeichnung;
             row.FindViewById<TextView>(Resource.Id.terminDatum).Text = termine[position].Trm_Datum.ToLongDateString();
             row.FindViewById<TextView>(Resource.Id.terminZeit).Text = termine[position].Trm_zeitanfang.TimeOfDay.Hours.ToString("00") + ":" + termine[position].Trm_zeitanfang.TimeOfDay.Minutes.ToString("00");
             row.FindViewById<CheckBox>(Resource.Id.anmStatus).Checked = termine[position].Trm_angemeldet;
+            row.FindViewById<CheckBox>(Resource.Id.anmStatus).Click += Anmelde_Status_Click;
             row.Click += Row_Click;
             return row;
+        }
+
+        private void Anmelde_Status_Click(object sender, EventArgs e)
+        {
+            int position = (int)((CheckBox)sender).Tag;
+            apiConnector ar = apiConnector.createReader();
+            bool outer = false;
+            Toast.MakeText(context, ar.Anmelden(!((CheckBox)sender).Checked, termine[position].Trm_id, out outer), ToastLength.Long);
+            ((CheckBox)sender).Checked = outer;
         }
 
         private void Row_Click(object sender, EventArgs e)
         {
             int position = (int)((LinearLayout)sender).Tag;
+            apiConnector ar = apiConnector.createReader();
         }
     }
 }
