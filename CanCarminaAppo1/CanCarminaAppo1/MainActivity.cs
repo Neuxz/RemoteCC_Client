@@ -15,36 +15,45 @@ namespace CanCarminaAppo1
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
-            // Set our view from the "main" layout resourcelay
-            SetContentView(Resource.Layout.Main);
-
-            // Get our button from the layout resource,
-            // and attach an event to it
-            FindViewById<Spinner>(Resource.Id.spinner1).MotionEventSplittingEnabled = false;
-            FindViewById<Spinner>(Resource.Id.spinner1).Visibility = ViewStates.Invisible;
-            FindViewById<Button>(Resource.Id.MyButton).Click += delegate 
+            if (!apiConnector.UserExists)
             {
-                if (FindViewById<EditText>(Resource.Id.editText1).Text != String.Empty)
+
+                // Set our view from the "main" layout resourcelay
+                SetContentView(Resource.Layout.Main);
+
+                // Get our button from the layout resource,
+                // and attach an event to it
+                FindViewById<Spinner>(Resource.Id.spinner1).MotionEventSplittingEnabled = false;
+                FindViewById<Spinner>(Resource.Id.spinner1).Visibility = ViewStates.Invisible;
+                FindViewById<Button>(Resource.Id.MyButton).Click += delegate
                 {
-                    FindViewById<Spinner>(Resource.Id.spinner1).MotionEventSplittingEnabled = true;
-                    FindViewById<Spinner>(Resource.Id.spinner1).Visibility = ViewStates.Visible;
-                    apiConnector ar = apiConnector.createReader(FindViewById<EditText>(Resource.Id.editText1).Text + ";cancarmina.de", this);
-                    if (ar.CheckLogIN())
+                    if (FindViewById<EditText>(Resource.Id.editText1).Text != String.Empty)
                     {
-                        Intent newMain = new Intent(this, typeof(MainMenu));
-                        StartActivity(newMain);
+                        FindViewById<Spinner>(Resource.Id.spinner1).MotionEventSplittingEnabled = true;
+                        FindViewById<Spinner>(Resource.Id.spinner1).Visibility = ViewStates.Visible;
+                        apiConnector ar = apiConnector.createReader(FindViewById<EditText>(Resource.Id.editText1).Text + ";cancarmina.de", this);
+                        if (ar.CheckLogIN())
+                        {
+                            Intent newMain = new Intent(this, typeof(MainMenu));
+                            StartActivity(newMain);
+                        }
                     }
-                }
-                else
+                    else
+                    {
+                        new AlertDialog.Builder(this).SetNeutralButton("Ok", delegate { }).SetMessage("Bitte geben sie ihren Benutzercode ein.").SetTitle("Kein Benutzer code.").Show();
+                    }
+                };
+                FindViewById<Button>(Resource.Id.button1).Click += delegate
                 {
-                    new AlertDialog.Builder(this).SetNeutralButton("Ok", delegate { }).SetMessage("Bitte geben sie ihren Benutzercode ein.").SetTitle("Kein Benutzer code.").Show();
-                }
-            };
-            FindViewById<Button>(Resource.Id.button1).Click += delegate
+                    new AlertDialog.Builder(this).SetNeutralButton("Ok", delegate { }).SetMessage("Not Implemented yet!").SetTitle("Debug Error").Show();
+                };
+            }
+            else
             {
-                new AlertDialog.Builder(this).SetNeutralButton("Ok", delegate { }).SetMessage("Not Implemented yet!").SetTitle("Debug Error").Show();
-            };
+                Intent newMain = new Intent(this, typeof(MainMenu));
+                StartActivity(newMain);
+                Finish();
+            }
         }
 
 

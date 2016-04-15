@@ -66,7 +66,7 @@ namespace CanCarminaAppo1
             int position = (int)((CheckBox)sender).Tag;
             apiConnector ar = apiConnector.createReader();
             bool outer = false;
-            Toast.MakeText(context, ar.Anmelden(!((CheckBox)sender).Checked, termine[position].Trm_id, out outer), ToastLength.Long);
+            Toast.MakeText(context, ar.Anmelden(((CheckBox)sender).Checked, termine[position].Trm_id, out outer), ToastLength.Short).Show();
             ((CheckBox)sender).Checked = outer;
         }
 

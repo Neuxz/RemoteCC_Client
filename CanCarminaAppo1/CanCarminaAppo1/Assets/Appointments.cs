@@ -103,7 +103,6 @@ namespace CanCarminaAppo1
         public Appointment(Dictionary<String, String> appointment)
         {
             string temp;
-            string optTemp;
             type = AppointmentType.OverView;
             if (appointment.TryGetValue("trm_datum", out temp))
             { trm_Datum = DateTime.Parse(temp); }

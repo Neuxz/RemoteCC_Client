@@ -25,7 +25,17 @@ namespace CanCarminaAppo1
         private const string apiAnAbML = "&a=";
         private const string apiAnML = "n";
         private const string apiAbML = "b";
+        private static bool userExists;
         private User curent;
+
+        public static bool UserExists
+        {
+            get
+            {
+                return (DriveManagementAndroid.getDatabase().phrase != null) ;
+            }
+        }
+
         //Create help[]
         private apiConnector()
         {
@@ -124,7 +134,7 @@ namespace CanCarminaAppo1
             }
             catch(Exception ec)
             {
-                return "";
+                return ec.ToString();
             }
         }
         public List<Appointment> getTermine()
@@ -181,17 +191,6 @@ namespace CanCarminaAppo1
                 mesu += sesu.ToString();
             }
             return mesu;
-        }
-        public struct Termine
-        {
-            public int trmID;
-            public DateTime datumZeit;
-            public DateTime beginn;
-            public DateTime ende;
-            public string titel;
-            public string beschreibung;
-            public string adresse;
-            public bool istAngemeldet;
         }
     }
 }

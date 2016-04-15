@@ -62,7 +62,7 @@ namespace CanCarminaAppo1
             return retur;
         }
 
-        public static new User getDatabase()
+        public static User getDatabase()
         {
             User result = new User();
             using (SqliteConnection co = new SqliteConnection("Data Source=" + databasePath))
@@ -76,10 +76,10 @@ namespace CanCarminaAppo1
                     if(read.Read())
                     {
 
-                        try { result.usrID = (string)read["ID"]; } catch (Exception ex) { result.usrID = ""; }
-                        try { result.phrase = (string)read["Name"]; } catch (Exception ex) { throw new Exception("NO Passphrase"); }
-                        try { result.usrCH = (string)read["Chor"]; } catch (Exception ex) { result.usrCH = ""; }
-                        try { result.storage = (List<Appointment>)read["Appointments"]; } catch (Exception ex) { }
+                        try { result.usrID = (string)read["ID"]; } catch { result.usrID = ""; }
+                        try { result.phrase = (string)read["Name"]; } catch { throw new Exception("NO Passphrase"); }
+                        try { result.usrCH = (string)read["Chor"]; } catch { result.usrCH = ""; }
+                        try { result.storage = (List<Appointment>)read["Appointments"]; } catch { }
                     }
                 }
                 catch(Exception ex)
