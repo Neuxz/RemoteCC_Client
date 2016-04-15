@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("CanCarminaAppo1.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("SingsteApp.Resource", IsApplication=true)]
 
-namespace CanCarminaAppo1
+namespace SingsteApp
 {
 	
 	

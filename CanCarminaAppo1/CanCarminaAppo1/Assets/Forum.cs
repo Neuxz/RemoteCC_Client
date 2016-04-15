@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CanCarminaAppo1
+namespace SingsteApp
 {
     public class ForumTile
     {

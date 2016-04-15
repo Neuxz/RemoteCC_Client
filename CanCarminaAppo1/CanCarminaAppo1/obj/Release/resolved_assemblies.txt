@@ -1,4 +1,4 @@
-C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\assets\CanCarminaAppo1.dll
+C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\assets\Singste App.dll
 C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\assets\Mono.Android.dll
 C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\assets\Mono.Data.Sqlite.dll
 C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\assets\mscorlib.dll

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="QR">QR Scanner</string>
-    <string name="ApplicationName">CanCarminaAppo1</string>
+    <string name="ApplicationName">Singste App</string>
   <string name="SignIN">Einloggen</string>
 </resources>

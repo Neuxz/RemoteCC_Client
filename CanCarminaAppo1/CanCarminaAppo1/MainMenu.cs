@@ -10,18 +10,18 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace CanCarminaAppo1
+namespace SingsteApp
 {
-    [Activity(Label = "MainMenu")]
+    [Activity(Label = "Termin Übersicht")]
     public class MainMenu : Activity
     {
         ListView lv;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.MainMenu);
+            SetContentView(SingsteApp.Resource.Layout.MainMenu);
             apiConnector ar = apiConnector.createReader();
-            lv = FindViewById<ListView>(Resource.Id.TerminListe);
+            lv = FindViewById<ListView>(SingsteApp.Resource.Id.TerminListe);
             lv.Adapter = new Termin_Adapter(this, ar.getTermine());
             lv.ItemClick += Lv_ItemClick;
             lv.ItemLongClick += Lv_ItemLongClick;

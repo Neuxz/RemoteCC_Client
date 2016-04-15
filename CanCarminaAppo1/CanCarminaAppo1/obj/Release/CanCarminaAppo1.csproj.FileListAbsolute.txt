@@ -13,13 +13,6 @@ C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\o
 C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\uploadflags.txt
 C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\CanCarminaAppo1.dll.mdb
 C:\Users\Benedikt\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\CanCarminaAppo1.dll.mdb
-C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\CanCarminaAppo1.dll
-C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\CanCarminaAppo1.pdb
-C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\CanCarminaAppo1.CanCarminaAppo1.apk
-C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\CanCarminaAppo1.CanCarminaAppo1-Signed.apk
-C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\CanCarminaAppo1.dll
-C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\CanCarminaAppo1.pdb
-C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\bin\CanCarminaAppo1.CanCarminaAppo1.apk
 C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\res\layout\mainmenu.xml
 C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\res\layout\termin_uebersicht.xml
 C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\res\layout\main.xml
@@ -28,5 +21,12 @@ C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\
 C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\R.cs.flag
 C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\uploadflags.txt
 C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\CanCarminaAppo1.csprojResolveAssemblyReference.cache
-C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\CanCarminaAppo1.dll.mdb
-C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\CanCarminaAppo1.dll.mdb
+C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\Singste App.dll
+C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\Singste App.pdb
+C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\Singste App.dll
+C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\Singste App.pdb
+C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\SingsteApp.SingsteApp.apk
+C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\SingsteApp.SingsteApp-Signed.apk
+C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\android\bin\SingsteApp.SingsteApp.apk
+C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\obj\Release\Singste App.dll.mdb
+C:\Users\bened\Source\Repos\RemoteCC_Client\CanCarminaAppo1\CanCarminaAppo1\bin\Release\Singste App.dll.mdb

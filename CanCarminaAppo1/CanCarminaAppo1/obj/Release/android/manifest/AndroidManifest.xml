@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="CanCarminaAppo1.CanCarminaAppo1" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="SingsteApp.SingsteApp" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
   <uses-sdk android:minSdkVersion="13" android:targetSdkVersion="23" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -8,14 +8,14 @@
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
   <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
-  <application android:label="Singste APP" android:icon="@drawable/icon" android:name="mono.android.app.Application" android:allowBackup="true">
-    <activity android:icon="@drawable/icon" android:label="CanCarminaAppo1" android:name="md505e880a511252a2972436605a4ec9d7f.MainActivity">
+  <application android:label="Singste APP" android:icon="@drawable/icon" android:name="Singste App" android:allowBackup="true">
+    <activity android:icon="@drawable/icon" android:label="SingsteApp" android:name="md54a8f3286f38768216a48ffdd86c7245c.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:label="MainMenu" android:name="md505e880a511252a2972436605a4ec9d7f.MainMenu" />
-    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="CanCarminaAppo1.CanCarminaAppo1.mono.MonoRuntimeProvider.__mono_init__" />
+    <activity android:label="Termin Übersicht" android:name="md54a8f3286f38768216a48ffdd86c7245c.MainMenu" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="SingsteApp.SingsteApp.mono.MonoRuntimeProvider.__mono_init__" />
   </application>
 </manifest>

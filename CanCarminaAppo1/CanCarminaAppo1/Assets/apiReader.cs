@@ -13,7 +13,7 @@ using System.Net;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-namespace CanCarminaAppo1
+namespace SingsteApp
 {
     [Serializable]
     class apiConnector

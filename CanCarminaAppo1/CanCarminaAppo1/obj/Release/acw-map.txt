@@ -1,12 +1,12 @@
-CanCarminaAppo1.MainActivity, CanCarminaAppo1;md505e880a511252a2972436605a4ec9d7f.MainActivity
-CanCarminaAppo1.MainActivity, CanCarminaAppo1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md505e880a511252a2972436605a4ec9d7f.MainActivity
-CanCarminaAppo1.MainActivity;md505e880a511252a2972436605a4ec9d7f.MainActivity
-cancarminaappo1.MainActivity;md505e880a511252a2972436605a4ec9d7f.MainActivity
-CanCarminaAppo1.MainMenu, CanCarminaAppo1;md505e880a511252a2972436605a4ec9d7f.MainMenu
-CanCarminaAppo1.MainMenu, CanCarminaAppo1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md505e880a511252a2972436605a4ec9d7f.MainMenu
-CanCarminaAppo1.MainMenu;md505e880a511252a2972436605a4ec9d7f.MainMenu
-cancarminaappo1.MainMenu;md505e880a511252a2972436605a4ec9d7f.MainMenu
-CanCarminaAppo1.Termin_Adapter, CanCarminaAppo1;md505e880a511252a2972436605a4ec9d7f.Termin_Adapter
-CanCarminaAppo1.Termin_Adapter, CanCarminaAppo1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md505e880a511252a2972436605a4ec9d7f.Termin_Adapter
-CanCarminaAppo1.Termin_Adapter;md505e880a511252a2972436605a4ec9d7f.Termin_Adapter
-cancarminaappo1.Termin_Adapter;md505e880a511252a2972436605a4ec9d7f.Termin_Adapter
+SingsteApp.MainActivity, Singste App;md54a8f3286f38768216a48ffdd86c7245c.MainActivity
+SingsteApp.MainActivity, Singste App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md54a8f3286f38768216a48ffdd86c7245c.MainActivity
+SingsteApp.MainActivity;md54a8f3286f38768216a48ffdd86c7245c.MainActivity
+singsteapp.MainActivity;md54a8f3286f38768216a48ffdd86c7245c.MainActivity
+SingsteApp.MainMenu, Singste App;md54a8f3286f38768216a48ffdd86c7245c.MainMenu
+SingsteApp.MainMenu, Singste App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md54a8f3286f38768216a48ffdd86c7245c.MainMenu
+SingsteApp.MainMenu;md54a8f3286f38768216a48ffdd86c7245c.MainMenu
+singsteapp.MainMenu;md54a8f3286f38768216a48ffdd86c7245c.MainMenu
+SingsteApp.Termin_Adapter, Singste App;md54a8f3286f38768216a48ffdd86c7245c.Termin_Adapter
+SingsteApp.Termin_Adapter, Singste App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md54a8f3286f38768216a48ffdd86c7245c.Termin_Adapter
+SingsteApp.Termin_Adapter;md54a8f3286f38768216a48ffdd86c7245c.Termin_Adapter
+singsteapp.Termin_Adapter;md54a8f3286f38768216a48ffdd86c7245c.Termin_Adapter

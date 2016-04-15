@@ -15,7 +15,7 @@ using Mono.Data.Sqlite;
 using System.Data.SqlClient;
 //using System.Data.SqlClient;
 
-namespace CanCarminaAppo1
+namespace SingsteApp
 {
     class DriveManagementAndroid : DriveManagement
     {
