@@ -14,13 +14,7 @@ namespace SingsteApp
 {
     abstract class DriveManagement
     {
-        public static bool createDatabase(User current, Context ct)
-        {
-            return false;
-        }
-        public static User getDatabase(Context ct)
-        {
-            return null;
-        }
+        public abstract bool createDatabase(User current, Context ct);
+        public abstract User getDatabase(Context ct);
     }
 }
